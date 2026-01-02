@@ -1,0 +1,41 @@
+camunda:
+  bpm:
+    admin-user:
+      id: demo
+      password: demo
+    generic-properties:
+      properties:
+        historyTimeToLive: P1D
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:camunda-db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    hikari:
+      maximum-pool-size: 5
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: boukouchmohamed7@gmail.com       # <-- replace with your Gmail
+    password: mlpn xyyc efwr qavj          # <-- replace with App Password if 2FA is enabled
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
